@@ -7,7 +7,7 @@ import java.util.*
 
 fun LocalDateTime.format(): String = this.format(englishDateFormatter)
 private val daysLookup = (1..31).associate { it.toLong() to getOrdinal(it) }
-private val englishDateFormatter = DateTimeFormatterBuilder().appendPattern("yyyy=MM-dd").appendLiteral(" ")
+private val englishDateFormatter = DateTimeFormatterBuilder().appendPattern("yyyy-MM-dd").appendLiteral(" ")
     .appendText(ChronoField.DAY_OF_MONTH, daysLookup).appendLiteral(" ").appendPattern("yyyy")
     .toFormatter(Locale.ENGLISH)
 
